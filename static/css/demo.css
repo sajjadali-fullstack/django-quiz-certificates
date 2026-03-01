@@ -1,0 +1,7 @@
+.hero {
+  height: 90vh;
+  /* background: linear-gradient(to right, #4b6cb7, #182848); */
+  /* background: linear-gradient(to right, #05ed27dc, #0552ebd7); */
+  background: linear-gradient(to right, #872fcfdc, #9eeb05d7);
+  color: white;
+}

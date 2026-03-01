@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Quiz Certificate</title>
+    <style>
+      body {
+        font-family: "Georgia", serif;
+        background-color: #fefefe;
+        margin: 0;
+        padding: 0;
+        position: relative;
+      }
+
+      .certificate-container {
+        width: 80%;
+        margin: 60px auto;
+        padding: 50px;
+        border: 10px solid #7e0a51;
+        position: relative;
+        overflow: hidden;
+        background-color: #fff;
+      }
+
+      .certificate {
+        text-align: center;
+        border: 5px solid #4caf50;
+        padding: 50px;
+        position: relative;
+        z-index: 2;
+      }
+
+      /* Geometric Square Style */
+      .square {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: #c69e6d;
+        transform: rotate(45deg);
+        opacity: 0.7;
+        z-index: 1;
+      }
+
+      /* Corners */
+      .top-left {
+        top: 20px;
+        left: 20px;
+      }
+      .top-right {
+        top: 20px;
+        right: 20px;
+      }
+      .bottom-left {
+        bottom: 20px;
+        left: 20px;
+      }
+      .bottom-right {
+        bottom: 20px;
+        right: 20px;
+      }
+
+      /* Center Edges */
+      .top-center {
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+      }
+      .bottom-center {
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+      }
+      .left-center {
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+      .right-center {
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%) rotate(45deg);
+      }
+
+      /* Certificate Text */
+      h1 {
+        font-size: 48px;
+        color: #7e0a51;
+      }
+
+      .details {
+        margin-top: 40px;
+        font-size: 20px;
+        line-height: 1.6;
+      }
+
+      .status {
+        font-size: 28px;
+        margin-top: 30px;
+        font-weight: bold;
+        color: #2196f3;
+      }
+
+      /* Geometric Square Style */
+      .square {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-color: #c69e6d;
+        transform: rotate(45deg);
+        opacity: 0.7;
+        z-index: 1;
+
+        /* Animation settings */
+        transition: transform 0.4s ease, background-color 0.4s ease;
+        cursor: pointer;
+      }
+
+      /* Corners */
+      .top-left {
+        top: 20px;
+        left: 20px;
+      }
+      .top-right {
+        top: 20px;
+        right: 20px;
+      }
+      .bottom-left {
+        bottom: 20px;
+        left: 20px;
+      }
+      .bottom-right {
+        bottom: 20px;
+        right: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="certificate-container">
+      <!-- Corner Squares -->
+      <div class="square top-left"></div>
+      <div class="square top-right"></div>
+      <div class="square bottom-left"></div>
+      <div class="square bottom-right"></div>
+
+      <!-- Center-Edge Squares -->
+      <div class="square top-center"></div>
+      <div class="square bottom-center"></div>
+      <div class="square left-center"></div>
+      <div class="square right-center"></div>
+
+      <!-- Certificate Content -->
+      <div class="certificate">
+        <h1>Certificate of Achievement</h1>
+        <p class="details">
+          This is to certify that
+          <strong>{{user_first_name}} {{user_last_name}}</strong><br />
+          has successfully completed the
+          <strong>{{ quiz_title }}</strong> quiz<br />
+          on {{ date_completed }}.
+        </p>
+
+        <p class="details">
+          Score: <strong>{{ score }} / {{ total }}</strong><br />
+          Percentage: <strong>{{ percentage }}%</strong>
+        </p>
+
+        <p class="status">
+          {% if percentage >= 50 %} ✅ Congratulations! You passed! {% else %}
+          ❌ Unfortunately, you did not pass. {% endif %}
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
