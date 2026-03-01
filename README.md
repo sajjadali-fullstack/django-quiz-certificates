@@ -6,6 +6,7 @@ A feature-rich Quiz application built with **Django**, allowing users to take qu
 [![Python](https://img.shields.io/badge/Python-3.12-blue)](https://www.python.org/)
 [![Django](https://img.shields.io/badge/Django-4.2-green)](https://www.djangoproject.com/)
 [![License](https://img.shields.io/badge/License-MIT-orange)](LICENSE)
+[![WeasyPrint](https://img.shields.io/badge/WeasyPrint-PDF-red)](https://weasyprint.org/)
 
 
 ## 🚀 Key Features
